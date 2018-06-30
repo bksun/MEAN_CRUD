@@ -20,7 +20,7 @@ export class EmployeeComponent implements OnInit {
     this.resetForm();
     this.refreshEmployeeList();
   }
-
+ 
   resetForm(form?: NgForm) {
     if (form)
       form.reset();
@@ -28,7 +28,7 @@ export class EmployeeComponent implements OnInit {
       _id: "",
       name: "",
       position: "",
-      office: "",
+      office: "1",
       salary: null
     }
 
