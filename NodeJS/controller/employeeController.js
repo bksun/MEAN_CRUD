@@ -37,7 +37,7 @@ router.put('/:id', (req, res) => {
 
     var emp = new Employee({
         name: req.body.name,
-        Position: req.body.Position,
+        position: req.body.Position,
         salary: req.body.salary,
         office: req.body.office,
     });
@@ -72,7 +72,7 @@ router.delete('/:id', (req, res) => {
 router.post('/', (req, res) => {
     var emp = new Employee({
         name: req.body.name,
-        Position: req.body.Position,
+        position: req.body.Position,
         salary: req.body.salary,
         office: req.body.office,
     });
