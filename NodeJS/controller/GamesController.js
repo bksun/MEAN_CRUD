@@ -7,10 +7,10 @@ var ObjectId = require('mongoose').Types.ObjectId;
 
 function validateGame(data) {
     let errors = {};
-    if (this.state.title === '') {
+    if (data.title === '') {
         errors.title = "Can't be empty";
     }
-    if (this.state.cover === '') {
+    if (data.cover === '') {
         errors.cover = "Can't be empty";
     }
 
@@ -44,8 +44,8 @@ router.post('/', (req, res) => {
 
     games.save((err, data) => {
     if(!err){
-        // console.log(res.send(data));
-        res.status(201).json({game: data.ops[0]});
+        console.log(data);
+        res.status(201).json({game: data});
     }
     else{
         res.status(500).json({ errors: {global: "something went wrong..."}});
@@ -62,7 +62,7 @@ router.get('/:id', (req, res) => {
     Games.findById((req.params.id), (err, doc) => {
         if(!err){
             res.send(doc);
-        }
+        }   
         else{
             console.log('Error in retrieing value'+ JSON.stringify(err, undefined, 2));
         }
