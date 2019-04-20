@@ -42,7 +42,7 @@ router.put('/:id', (req, res) => {
         office: req.body.office,
     });
 
-    Employee.findByIdAndUpdate(req.params.id, { $set, emp }, { new: true }, (err, doc) => {
+    Employee.findByIdAndUpdate(req.params.id, { $set: emp }, { new: true }, (err, doc) => {
         if(!err){
             res.send(doc);
         }
